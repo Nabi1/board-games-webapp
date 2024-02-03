@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "jest/globals": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:jest/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["jest", "react-hooks"]
 }
