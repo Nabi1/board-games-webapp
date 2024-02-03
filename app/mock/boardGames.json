@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "name": "Azul",
+    "manifest": {
+      "tags": {
+        "categories": ["abstract", "family"]
+      }
+    },
+    "nextPartyIn": 1500
+  },
+  {
+    "id": "2",
+    "name": "Catan",
+    "manifest": {
+      "tags": {
+        "categories": ["family"]
+      }
+    },
+    "nextPartyIn": 1234
+  },
+  {
+    "id": "3",
+    "name": "Codenames",
+    "manifest": {
+      "tags": {
+        "categories": ["party", "family"]
+      }
+    },
+    "nextPartyIn": 5433
+  },
+  {
+    "id": "4",
+    "name": "Pandemic",
+    "manifest": {
+      "tags": {
+        "categories": ["cooperative", "family"]
+      }
+    },
+    "nextPartyIn": 869
+  },
+  {
+    "id": "5",
+    "name": "Carcassonne",
+    "manifest": {
+      "tags": {
+        "categories": ["strategy", "family"]
+      }
+    },
+    "nextPartyIn": 987
+  },
+  {
+    "id": "6",
+    "name": "Wingspan",
+    "manifest": {
+      "tags": {
+        "categories": ["strategy", "animals"]
+      }
+    },
+    "nextPartyIn": 1800
+  },
+  {
+    "id": "7",
+    "name": "Meeples War",
+    "manifest": {
+      "tags": {
+        "categories": ["strategy"]
+      }
+    },
+    "nextPartyIn": 1800
+  }
+]
