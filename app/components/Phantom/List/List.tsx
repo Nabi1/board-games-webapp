@@ -48,7 +48,7 @@ export function List() {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="flex w-full md:w-min-[700px] flex-col gap-4">
+      <div data-testid="phantom-list" className="flex w-full flex-col gap-4">
         {filteredPhantoms.length > 0 ? (
           filteredPhantoms.map((phantom) => (
             <Item

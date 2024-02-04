@@ -1,78 +1,13 @@
 import React from "react";
 import "@testing-library/jest-dom";
+import fetchMock from "jest-fetch-mock";
 import { render, screen } from "@testing-library/react";
 
 import { List } from "../List";
 import { DashboardProvider } from "../../../../contexts/DashboardProvider";
-import fetchMock from "jest-fetch-mock";
+import mockData from "../../../../api/mock/phantoms.json";
 
 fetchMock.enableMocks();
-
-const mockData = [
-  {
-    id: "6941466533774460",
-    name: "Grow Your LinkedIn Network",
-    script: "Grow Your LinkedIn Network.js",
-    manifest: {
-      tags: {
-        categories: ["workflow", "linkedin", "salesNavigator"],
-      },
-    },
-    launchType: "repeatedly",
-    repeatedLaunchTimes: {
-      simplePreset: "Once per day",
-    },
-    nextLaunchIn: 3654,
-  },
-  {
-    id: "1936902841792005",
-    name: "LinkedIn Contacts Email Finder Workflow",
-    script: "LinkedIn Contacts to Emails.js",
-    manifest: {
-      tags: {
-        categories: ["workflow", "linkedin", "mail"],
-      },
-    },
-    launchType: "repeatedly",
-    repeatedLaunchTimes: {
-      simplePreset: "Twice per day",
-    },
-    nextLaunchIn: 6842,
-  },
-  {
-    id: "5728802186298527",
-    name: "LinkedIn Profile Scraper",
-    script: "LinkedIn Profile Scraper.js",
-    manifest: {
-      tags: {
-        categories: ["linkedin", "mail"],
-      },
-    },
-    launchType: "manually",
-  },
-  {
-    id: "8937174725125918",
-    name: "Instagram Notifications Extractor",
-    script: "Instagram Notifications Extractor.js",
-    manifest: {
-      tags: {
-        categories: ["instagram"],
-      },
-    },
-    launchType: "manually",
-  },
-  {
-    id: "891500502819788",
-    name: "LinkedIn Event Inviter",
-    script: "LinkedIn Event Inviter.js",
-    manifest: {
-      tags: {
-        categories: ["linkedin"],
-      },
-    },
-    launchType: "manually",
-  },
-];
 
 jest.mock("next/navigation", () => ({
   useSearchParams: () => {
@@ -99,7 +34,12 @@ describe("List component should display :", () => {
     );
   });
 
-  mockData.forEach((item, index) => {
+  it("should have the correct number of children", () => {
+    const listElement = screen.getByTestId("phantom-list");
+    expect(listElement.children.length).toEqual(mockData.length);
+  });
+
+  mockData.forEach((item) => {
     describe(`Item with name ${item.name}`, () => {
       it(`should display name`, () => {
         const name = screen.getByText(item.name).closest("p");

@@ -43,6 +43,7 @@ export function Dropdown({
       setSelectedPhantom(phantom);
       setOpenModalId(id);
     }
+    setIsOpen(false);
   };
 
   const handleDuplicate = (id: string) => {

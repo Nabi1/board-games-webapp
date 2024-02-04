@@ -5,74 +5,9 @@ import fetchMock from "jest-fetch-mock";
 
 import { DashboardProvider } from "../../../contexts/DashboardProvider";
 import { SideBar } from "../SideBar";
+import mockData from "../../../api/mock/phantoms.json";
 
 fetchMock.enableMocks();
-
-const mockData = [
-  {
-    id: "6941466533774460",
-    name: "Grow Your LinkedIn Network",
-    script: "Grow Your LinkedIn Network.js",
-    manifest: {
-      tags: {
-        categories: ["workflow", "linkedin", "salesNavigator"],
-      },
-    },
-    launchType: "repeatedly",
-    repeatedLaunchTimes: {
-      simplePreset: "Once per day",
-    },
-    nextLaunchIn: 3654,
-  },
-  {
-    id: "1936902841792005",
-    name: "LinkedIn Contacts Email Finder Workflow",
-    script: "LinkedIn Contacts to Emails.js",
-    manifest: {
-      tags: {
-        categories: ["workflow", "linkedin", "mail"],
-      },
-    },
-    launchType: "repeatedly",
-    repeatedLaunchTimes: {
-      simplePreset: "Twice per day",
-    },
-    nextLaunchIn: 6842,
-  },
-  {
-    id: "5728802186298527",
-    name: "LinkedIn Profile Scraper",
-    script: "LinkedIn Profile Scraper.js",
-    manifest: {
-      tags: {
-        categories: ["linkedin", "mail"],
-      },
-    },
-    launchType: "manually",
-  },
-  {
-    id: "8937174725125918",
-    name: "Instagram Notifications Extractor",
-    script: "Instagram Notifications Extractor.js",
-    manifest: {
-      tags: {
-        categories: ["instagram"],
-      },
-    },
-    launchType: "manually",
-  },
-  {
-    id: "891500502819788",
-    name: "LinkedIn Event Inviter",
-    script: "LinkedIn Event Inviter.js",
-    manifest: {
-      tags: {
-        categories: ["linkedin"],
-      },
-    },
-    launchType: "manually",
-  },
-];
 
 describe("SideBar Component", () => {
   beforeEach(() => {
@@ -95,20 +30,28 @@ describe("SideBar Component", () => {
 
   describe("Search Input", () => {
     it("should render correctly", () => {
-      expect(screen.getByPlaceholderText("Search phantom")).toBeInTheDocument();
+      const searchInput = screen.getByPlaceholderText("Search phantom");
+
+      expect(searchInput).toBeInTheDocument();
     });
   });
 
   describe("Category Filters", () => {
     it("should render with correct categories", () => {
-      expect(screen.getByText("instagram")).toBeInTheDocument();
-      expect(screen.getByText("mail")).toBeInTheDocument();
-      expect(screen.getByText("workflow")).toBeInTheDocument();
+      const instagramCategory = screen.getByText("instagram");
+      const mailCategory = screen.getByText("mail");
+      const workflowCategory = screen.getByText("workflow");
+
+      expect(instagramCategory).toBeInTheDocument();
+      expect(mailCategory).toBeInTheDocument();
+      expect(workflowCategory).toBeInTheDocument();
     });
 
     it("should apply active styling on click", () => {
       const button = screen.getByText("instagram");
+
       fireEvent.click(button);
+
       expect(button).toHaveClass("bg-blue-500 text-white");
     });
   });
