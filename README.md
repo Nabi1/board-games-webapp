@@ -1,14 +1,26 @@
 # Project README
 
-[Live Demo of the App](https://phantom-dashboard.vercel.app/)  🚀
+[Live Demo of the App](https://phantom-dashboard.vercel.app/) 🚀
 
 The application has been deployed and is live.
 
 # PhantomBuster Front-end Software Engineer Technical Test 👻
 
-This project is a technical test for the Front-end Software Engineer position at PhantomBuster. The goal is to create a page that meets the following requirements:
+## Table of Contents
 
-## Requirements
+1. [Introduction](#introduction)
+2. [Requirements](#requirements)
+3. [Folder Structure](#folder-structure)
+4. [Unit Testing](#unit-testing)
+5. [Search Functionality](#search-functionality)
+6. [Prerequisites](#prerequisites)
+7. [Getting Started](#getting-started)
+
+### Introduction
+
+This project is a technical test for the Front-end Software Engineer position at PhantomBuster. The goal is to create a page that meets specific requirements.
+
+### Requirements
 
 The page must contain:
 
@@ -31,61 +43,50 @@ The page must contain:
 
 5. **Countdown Timer**: Display a countdown of the time remaining before the next auto-launch.
 
-6. **Additional Features**: Feel free to implement any additional features that come to your mind and could improve the user experience or the overall quality of the application.
+- **Additional Features**: Any additional features that could enhance the user experience or the application's quality are welcome.
+
+### Folder Structure
+
+The project follows a modular folder structure, with each module containing its own components, tests and types.
+
+### Unit Testing
+
+In this project, unit tests adhere to the Arrange, Act, Assert (AAA) principle, ensuring consistency and readability. Element selection for testing follows the query priority guide recommended by Testing Library [Testing Library Query Priority](https://testing-library.com/docs/queries/about/#priority).
+
+### Search Functionality
+
+The search input launches a search query when the user types in the input field. The search query filters the list of Phantoms by name and scrip's name, and the filtered list is displayed in the UI. The search query is case-insensitive.
 
 ## Prerequisites
 
-- Node.js version v18.17.0 or higher.
+Requires Node.js version v18.17.0 or higher. Use nvm to install if needed:
 
-  If you don't have this version, you can install it using:
-
-  ```bash
-  $ nvm install v18.17.0
-  $ nvm use v18.17.0
-  ```
+```bash
+$ nvm install v18.17.0
+$ nvm use v18.17.0
+```
 
 ## Getting Started
 
 First, install the dependencies:
 
 ```bash
-npm install
+$ npm install
 # or
-yarn
+$ yarn
 # or
-pnpm install
+$ pnpm install
 
 ```
 
 Second, run the development server:
 
 ```bash
-npm run dev
+$ npm run dev
 # or
-yarn dev
+$ yarn dev
 # or
-pnpm dev
-# or
-bun dev
+$ pnpm dev
 ```
 
 Open http://localhost:3000 with your browser to see the result.
-
-You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
-
-This project uses next/font to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
