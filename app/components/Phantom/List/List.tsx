@@ -9,6 +9,7 @@ import { IPhantom } from "../../../types";
 export function List() {
   const { state } = useContext(DashboardContext);
   const [openModalId, setOpenModalId] = useState("");
+
   const [selectedPhantom, setSelectedPhantom] = useState<IPhantom>({
     id: "",
     name: "",

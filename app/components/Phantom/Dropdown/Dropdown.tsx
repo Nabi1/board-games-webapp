@@ -20,7 +20,8 @@ export function Dropdown({
   const [autoplay, setAutoplay] = useState(false);
 
   const dropDownRef = useRef<HTMLDivElement>(null);
-  const handleClickOutside = (event: { target: any }) => {
+
+  const handleClickOutside = (event: { target: Node | EventTarget | null }) => {
     if (
       dropDownRef.current &&
       !dropDownRef.current.contains(event.target as Node)
@@ -29,6 +30,7 @@ export function Dropdown({
       setAutoplay(false);
     }
   };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
 
@@ -82,7 +84,7 @@ export function Dropdown({
       </button>
 
       {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+        <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <button
               className="text-gray-700 justify-between	w-full  flex px-4 py-2 text-sm hover:bg-gray-100"

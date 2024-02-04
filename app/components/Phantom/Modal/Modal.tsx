@@ -6,7 +6,9 @@ import { Props } from "./types";
 export function Modal({ setOpen, openModalId, phantomId, phantomName }: Props) {
   const { dispatch } = useContext(DashboardContext);
   const [inputValue, setInputValue] = useState(phantomName);
+
   const modalRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const closeModal = useCallback(() => {
     setOpen("");
@@ -50,9 +52,15 @@ export function Modal({ setOpen, openModalId, phantomId, phantomName }: Props) {
         <h1 className="text-xl font-bold">Edit Phantom name</h1>
         <h2 className="text-base">Phantom name</h2>
         <input
+          ref={inputRef}
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSave();
+            }
+          }}
           className="border rounded-lg border-gray-300 p-3 my-2 w-full"
         />
         <div className="flex justify-end gap-2">

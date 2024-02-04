@@ -2,7 +2,7 @@
 
 [Live Demo of the App](https://phantom-dashboard.vercel.app/) 🚀
 
-The application has been deployed and is live.
+The application has been deployed and is live. Yu can access the live demo by clicking the link above.
 
 # PhantomBuster Front-end Software Engineer Technical Test 👻
 

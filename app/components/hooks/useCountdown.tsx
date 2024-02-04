@@ -1,17 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-// could potentially be reused in multiple components
 export function useCountdown(initialCountdown?: number) {
   const [countdown, setCountdown] = useState(initialCountdown || 0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown((prevCountdown) => prevCountdown - 1);
+    intervalRef.current = setInterval(() => {
+      setCountdown((prevCountdown) => {
+        if (prevCountdown - 1 <= 0) {
+          if (intervalRef.current) clearInterval(intervalRef.current);
+          return 0;
+        }
+        return prevCountdown - 1;
+      });
     }, 1000);
 
-    // cleanup setInterval
     return () => {
-      clearInterval(timer);
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, []);
 

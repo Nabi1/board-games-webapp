@@ -1,15 +1,11 @@
 import React from "react";
-import activityAnimation from "react-useanimations/lib/activity";
-import UseAnimations from "react-useanimations";
 
+import { Countdown } from "./Countdown";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { Icon } from "./Icon";
 import { Props } from "./types";
-import { useCountdown } from "../../hooks/useCountdown";
 
 export function Item({ item, setOpenModalId, setSelectedPhantom }: Props) {
-  const countdown = useCountdown(item.nextLaunchIn);
-
   return (
     <section
       key={item.id}
@@ -38,18 +34,10 @@ export function Item({ item, setOpenModalId, setSelectedPhantom }: Props) {
         ))}
       </ul>
       {item.repeatedLaunchTimes?.simplePreset ? (
-        <span className="text-gray-500 text-sm gap-4 flex items-center">
-          {item.repeatedLaunchTimes.simplePreset} |
-          {item.nextLaunchIn && (
-            <UseAnimations
-              animation={activityAnimation}
-              strokeColor="green"
-              autoplay={true}
-              size={25}
-            />
-          )}
-          {` in ${countdown} seconds`}
-        </span>
+        <Countdown
+          simplePreset={item.repeatedLaunchTimes.simplePreset}
+          initialCountdown={item.nextLaunchIn}
+        />
       ) : (
         <p className="text-gray-500 text-sm">{item.launchType}</p>
       )}
