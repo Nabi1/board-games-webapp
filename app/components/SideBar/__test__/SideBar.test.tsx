@@ -5,7 +5,7 @@ import fetchMock from "jest-fetch-mock";
 
 import { DashboardProvider } from "../../../contexts/DashboardProvider";
 import { SideBar } from "../SideBar";
-import mockData from "../../../api/mock/phantoms.json";
+import mockData from "../../../../public/api/mock/phantoms.json";
 
 fetchMock.enableMocks();
 

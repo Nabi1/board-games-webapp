@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Countdown } from "./Countdown";
+import { Countdown } from "./Countdown/Countdown";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { Icon } from "./Icon";
 import { Props } from "./types";

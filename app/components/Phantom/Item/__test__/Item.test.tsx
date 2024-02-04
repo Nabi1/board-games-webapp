@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 
 import { Item } from "../Item";
 import { IPhantom } from "../../../../types";
-import mockData from "../../../../api/mock/phantoms.json";
+import mockData from "../../../../../public/api/mock/phantoms.json";
 
 describe("Item", () => {
   const phantom = mockData[0] as IPhantom;

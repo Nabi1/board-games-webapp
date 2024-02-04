@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 
 import { List } from "../List";
 import { DashboardProvider } from "../../../../contexts/DashboardProvider";
-import mockData from "../../../../api/mock/phantoms.json";
+import mockData from "../../../../../public/api/mock/phantoms.json";
 
 fetchMock.enableMocks();
 
