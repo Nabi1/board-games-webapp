@@ -13,14 +13,15 @@ The application has been deployed and is live. Yu can access the live demo by cl
 3. [Folder Structure](#folder-structure)
 4. [Unit Testing](#unit-testing)
 5. [Search Functionality](#search-functionality)
-6. [Prerequisites](#prerequisites)
-7. [Getting Started](#getting-started)
+6. [React Hooks location](#react-hooks-location)
+7. [Prerequisites](#prerequisites)
+8. [Getting Started](#getting-started)
 
 ### Introduction
 
 This project is a technical test for the Front-end Software Engineer position at PhantomBuster. The goal is to create a page that meets specific requirements.
 
-### Requirements
+### Requirements 👷‍♀️
 
 The page must contain:
 
@@ -45,7 +46,7 @@ The page must contain:
 
 - **Additional Features**: Any additional features that could enhance the user experience or the application's quality are welcome.
 
-### Folder Structure
+### Folder Structure 🏢
 
 The project follows a modular folder structure, with each module containing its own components, tests and types.
 
@@ -53,9 +54,23 @@ The project follows a modular folder structure, with each module containing its 
 
 In this project, unit tests adhere to the Arrange, Act, Assert (AAA) principle, ensuring consistency and readability. Element selection for testing follows the query priority guide recommended by Testing Library [Testing Library Query Priority](https://testing-library.com/docs/queries/about/#priority).
 
-### Search Functionality
+### Search Functionality 🔍
 
 The search input launches a search query when the user types in the input field. The search query filters the list of Phantoms by name and scrip's name, and the filtered list is displayed in the UI. The search query is case-insensitive.
+
+### React Hooks location ⚓️
+
+In case you are searching for the location of the React hooks used in the project, here is a table that shows the location of each hook
+
+| useState                                       | useEffect                                      | useContext                                     | useReducer                           | useRef                                         | useCallback                              |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ------------------------------------ | ---------------------------------------------- | ---------------------------------------- |
+| ./app/components/SideBar/SideBar.tsx           | ./app/contexts/DashboardProvider.tsx           | ./app/components/SideBar/SideBar.tsx           | ./app/contexts/DashboardProvider.tsx | ./app/components/hooks/useCountdown.tsx        | ./app/components/Phantom/List/List.tsx   |
+| ./app/components/ResetButton.tsx               | ./app/components/SideBar/SideBar.tsx           | ./app/components/ResetButton.tsx               |                                      | ./app/components/Phantom/Dropdown/Dropdown.tsx | ./app/components/Phantom/Modal/Modal.tsx |
+| ./app/components/hooks/useCountdown.tsx        | ./app/components/hooks/useCountdown.tsx        | ./app/components/Phantom/Dropdown/Dropdown.tsx |                                      | ./app/components/Phantom/Modal/Modal.tsx       |                                          |
+| ./app/components/Phantom/Dropdown/Dropdown.tsx | ./app/components/Phantom/Dropdown/Dropdown.tsx | ./app/components/Phantom/List/List.tsx         |                                      |                                                |                                          |
+| ./app/components/Phantom/List/List.tsx         | ./app/components/Phantom/Modal/Modal.tsx       | ./app/components/Phantom/Modal/Modal.tsx       |                                      |                                                |                                          |
+| ./app/components/Phantom/Modal/Modal.tsx       | ./app/phantom/[slug]/page.tsx                  |                                                |                                      |                                                |                                          |
+| ./app/phantom/[slug]/page.tsx                  |                                                |                                                |                                      |                                                |                                          |
 
 ## Prerequisites
 
