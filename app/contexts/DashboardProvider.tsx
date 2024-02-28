@@ -9,7 +9,7 @@ import {
   MODIFY,
   SET_SEARCH_TERM,
   RESET,
-} from "./contantes";
+} from "./contants";
 
 // Initial state
 const initialState: { boardGames: BroadGameType[]; searchTerm: string } = {

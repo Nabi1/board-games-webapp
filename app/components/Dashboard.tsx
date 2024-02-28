@@ -1,6 +1,6 @@
 import { SideBar } from "./SideBar/SideBar";
 import { ResetButton } from "./ResetButton";
-import { List } from "./BroadGame/List/List";
+import { List } from "./MainContent/List/List";
 
 export function Dashboard() {
   return (

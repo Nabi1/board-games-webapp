@@ -6,7 +6,7 @@ import {
   MODIFY,
   SET_SEARCH_TERM,
   RESET,
-} from "./contantes";
+} from "./contants";
 
 type InitializeAction = { type: typeof INITIALIZE; payload: BroadGameType[] };
 type DuplicateAction = { type: typeof DUPLICATE; payload: BroadGameType };
